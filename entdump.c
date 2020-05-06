@@ -131,7 +131,7 @@ char drive[_MAX_DRIVE];
 char dir[_MAX_DIR];
 char fname[_MAX_FNAME];
 char ext[_MAX_EXT];
-long hFile;
+intptr_t hFile; /* MrG{DRGN} changed from long to intptr_t for 64 bit*/
 struct _finddata_t file;
 int filesize;
 
@@ -159,7 +159,7 @@ int main(int argc, char* argv[])
 		if (has_wild(argv[1]))
 		{
 			DrivePath(argv[1]);
-			printf("%lu total missing textures.\n", count_total_missing);
+			printf("%zu total missing textures.\n", count_total_missing); /* MrG{DRGN} changed from %lu to %zu for 64 bit */
 			return EXIT_SUCCESS;
 		}
 		else
@@ -354,7 +354,7 @@ void CMod_LoadSurfaces(lump_t* lump)
 		}
 	}
 	printf("Map uses %i unique textures %i times\n", uniques, count);
-	printf("Missing %lu textures.\n", count_map_missing);
+	printf("Missing %zu textures.\n", count_map_missing); /* MrG{DRGN} changed from %lu to %zu for 64 bit */
 }
 
 int wal_exists(char* name)
