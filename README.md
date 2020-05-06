@@ -1,5 +1,9 @@
 # entdump
+
+
 Entity and Texture dump program for Quake 2 BSPs
+
+
 // From http://old.r1ch.net/stuff/r1q2/ - thanks R1ch.
 //GPL etc.
 //
